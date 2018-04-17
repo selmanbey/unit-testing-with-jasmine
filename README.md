@@ -4,25 +4,20 @@ This is a Udacity Front End Nanodegree project in which students are given a
 web-based application that reads RSS feeds. The students then are expected to use
 Jasmine to write a number of tests against this pre-existing application. These
 tests will test the underlying business logic of the application as well as the
-event handling and DOM manipulation.<br>
-
-The feedreader.js file in this repo contains my test suites.
+event handling and DOM manipulation.
 
 
 ## Instructions to run the app and the tests
 1. Download or clone this repository
 2. Run the 'index.html' file on your browser (preferably Google Chrome) <br>
-(feedreader.js script, together with the other necessary libraries, are hooked
+ (feedreader.js script, together with the other necessary libraries, are hooked
   to the index.html, so running index.html will also run the tests. They will
   appear at the bottom of the page.)
 
 
 ## feedreader.js
 This is the Jasmine spec file that contains all of the tests that will be run
-against the RSS Feeder application.<br>
-<br>
-All of the test suits are places within the $() function, since some of these
-tests require DOM elements. It is to ensure they don't run until the DOM is ready.
+against the RSS Feeder application.
 
 
 ## Test Suites
