@@ -15,7 +15,7 @@ event handling and DOM manipulation.
   appear at the bottom of the page.)
 
 
-## feedreader.js
+## /jasmine/spec/feedreader.js
 This is the Jasmine spec file that contains all of the tests that will be run
 against the RSS Feeder application.
 
