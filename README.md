@@ -6,7 +6,14 @@ Jasmine to write a number of tests against this pre-existing application. These
 tests will test the underlying business logic of the application as well as the
 event handling and DOM manipulation.<br>
 
-The feedreader.js file in this repo are my solution.
+The feedreader.js file in this repo contains my test suites.
+
+## Instructions to run the app and the tests
+1. Download or clone this repository
+2. Run the 'index.html' file on your browser (preferably Google Chrome)
+(feedreader.js script, together with the other necessary libraries, are hooked
+  to the index.html, so running index.html will also run the tests. They will
+  appear at the bottom of the page.)
 
 ## feedreader.js
 This is the Jasmine spec file that contains all of the tests that will be run
