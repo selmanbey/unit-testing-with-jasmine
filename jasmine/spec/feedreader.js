@@ -69,8 +69,8 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).not.toBe(true);
             $('.menu-icon-link').trigger("click");
             expect($('body').hasClass('menu-hidden')).toBe(true);
-          })
-    })
+          });
+    });
 
     /* A new test suite named "Initial Entries" */
     describe("Initial Entries", function(){
@@ -89,9 +89,10 @@ $(function() {
        */
        it("are loaded", function(done) {
          expect($(".feed").children().length).not.toBe(0);
+         expect($(".feed > a > article").hasClass("entry")).toBe(true);
          done();
        });
-      })
+     });
 
       /* A new test suite named "New Feed Selection" */
       describe("New Feed Selection", function() {
@@ -100,22 +101,26 @@ $(function() {
          * that asynchronous loadFeed() function is called and completed
          * its work
          */
+         var prevUrl;
+         var newUrl;
+
          beforeEach(function(done) {
-           loadFeed(0, done);
-         })
+           loadFeed(0, function() {
+             prevUrl = $(".feed").children()[0];
+             loadFeed(1, function() {
+               newUrl = $(".feed").children()[0];
+               done();
+             });
+           });
+         });
 
          /* This is a test that ensures when a new feed is loaded
           * by the loadFeed function that the content actually changes.
           */
          it("loads new content properly", function(done) {
-           let oldFirstFeed = $(".feed").children()[0]
-           console.log(oldFirstFeed.getAttribute("href"))
-           loadFeed(1, function() {
-               let newFirstFeed = $(".feed").children()[0]
-               console.log(newFirstFeed.getAttribute("href"))
-               expect(oldFirstFeed.getAttribute("href")).not.toBe(newFirstFeed.getAttribute("href"));
-               done();
+             expect(prevUrl.getAttribute("href")).not.toBe(newUrl.getAttribute("href"));
+             expect(prevUrl.innerText).not.toBe(newUrl.innerText);
+             done();
             });
-         })
-      })
+         });
 }());
